@@ -30,7 +30,7 @@ resource "azurerm_virtual_machine" "msc403" {
 
 
 	storage_image_reference {
-		id = "${data.azurerm_image.msc401_search.id}"
+		id = "${data.azurerm_image.msc403_search.id}"
 	}
 
 	storage_os_disk {

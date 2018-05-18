@@ -11,7 +11,7 @@ data "azurerm_image" "sql402_search" {
 }
 
 data "azurerm_image" "msc401_search" {
-  name                = "windows-baseline_v1_0"
+  name                = "sccm-primarysite_v1_0"
   resource_group_name = "${var.image_resource_group}"
 }
 

@@ -26,7 +26,7 @@ resource "azurerm_virtual_machine" "cer402" {
 	location                      = "${var.location}"
 	resource_group_name           = "${var.resource_group_name}"
 	network_interface_ids         = ["${azurerm_network_interface.cer402_nic.id}"]
-	vm_size                       = "Standard_DS1_v2"
+	vm_size                       = "Standard_DS2_v2"
 	delete_os_disk_on_termination = true
 
 	storage_image_reference {
