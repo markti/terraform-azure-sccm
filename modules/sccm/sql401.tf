@@ -38,6 +38,22 @@ resource "azurerm_virtual_machine" "sql401" {
 		managed_disk_type = "Standard_LRS"
 	}
 
+	storage_data_disk {
+		name = "${local.sql401_name}-disk2"
+		create_option     = "Empty"
+		managed_disk_type = "Standard_LRS"
+		disk_size_gb = "500"
+		lun = 0
+	}
+
+	storage_data_disk {
+		name = "${local.sql401_name}-disk3"
+		create_option     = "Empty"
+		managed_disk_type = "Standard_LRS"
+		disk_size_gb = "250"
+		lun = 1
+	}
+
 	os_profile {
 		computer_name  = "${local.sql401_name}"
 		admin_username = "${var.admin_username}"
