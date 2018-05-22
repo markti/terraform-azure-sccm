@@ -14,7 +14,7 @@ resource "azurerm_network_interface" "cer401_nic" {
 		name                          = "primary_ca"
 		subnet_id                     = "${var.subnet_id}"
 		private_ip_address_allocation = "static"
-		private_ip_address            = "172.18.4.6"
+		private_ip_address            = "172.18.5.6"
 		application_security_group_ids = ["${azurerm_application_security_group.cer-asg.id}"]
 	}
 }
@@ -28,6 +28,8 @@ resource "azurerm_virtual_machine" "cer401" {
 	network_interface_ids         = ["${azurerm_network_interface.cer401_nic.id}"]
 	vm_size                       = "Standard_DS2_v2"
 	delete_os_disk_on_termination = true
+
+  zones = ["1"]
 
 	storage_image_reference {
 		id = "${data.azurerm_image.cer_search.id}"

@@ -5,11 +5,6 @@ data "azurerm_image" "sql401_search" {
   resource_group_name = "${var.image_resource_group}"
 }
 
-data "azurerm_image" "sql402_search" {
-  name                = "sqlserver-2012-sp4-baseline_v1_0"
-  resource_group_name = "${var.image_resource_group}"
-}
-
 data "azurerm_image" "msc401_search" {
   name                = "sccm-primarysite_v1_0"
   resource_group_name = "${var.image_resource_group}"

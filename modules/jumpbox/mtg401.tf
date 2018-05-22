@@ -8,6 +8,8 @@ resource "azurerm_public_ip" "mtg401_ip" {
   location                     = "${var.location}"
   resource_group_name          = "${var.resource_group_name}"
   public_ip_address_allocation = "static"
+
+  zones = ["1"]
 }
 
 resource "azurerm_network_interface" "mtg401_nic" {
@@ -35,6 +37,8 @@ resource "azurerm_virtual_machine" "client" {
 	network_interface_ids         = ["${azurerm_network_interface.mtg401_nic.id}"]
 	vm_size                       = "Standard_DS1_v2"
 	delete_os_disk_on_termination = true
+
+  zones = ["1"]
 
 
 	storage_image_reference {

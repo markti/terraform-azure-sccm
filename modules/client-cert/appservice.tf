@@ -1,7 +1,7 @@
 locals {
   app_service_plan_name = "${var.prefix}MSC-plan"
-  aia_cdp_app_name = "wentestpfx"
-  certreq_app_name = "wenuse1clientr"
+  aia_cdp_app_name = "wenprodpki"
+  certreq_app_name = "wenusc2clientr"
   app_service_plan_sku_tier = "Standard"
   app_service_plan_sku_size = "S1"
 }

@@ -7,10 +7,10 @@ provider "azurerm"
 }
 
 locals {
-  prefix = "WT"
+  prefix = "WP"
   resource_group = "SCCM"
-  active_directory_name = "AZRCORPFRANT.wendys.com"
-  active_directory_netbios_name = "AZRCORPT"
+  active_directory_name = "AZRCORPFRANP.wendys.com"
+  active_directory_netbios_name = "AZRCORPP"
 }
 
 resource "azurerm_resource_group" "rg" {

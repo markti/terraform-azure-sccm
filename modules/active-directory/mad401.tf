@@ -14,7 +14,7 @@ resource "azurerm_network_interface" "mad401_nic" {
 		name                          = "primary_dc"
 		subnet_id                     = "${var.subnet_id}"
 		private_ip_address_allocation = "static"
-		private_ip_address            = "172.18.4.4"
+		private_ip_address            = "172.18.5.4"
 		application_security_group_ids = ["${azurerm_application_security_group.mad-asg.id}"]
 	}
 }
@@ -27,6 +27,8 @@ resource "azurerm_virtual_machine" "mad401" {
   network_interface_ids         = ["${azurerm_network_interface.mad401_nic.id}"]
   vm_size                       = "Standard_DS2_v2"
   delete_os_disk_on_termination = true
+
+  zones = ["1"]
 
 	storage_image_reference {
 		id = "${data.azurerm_image.mad_search.id}"
